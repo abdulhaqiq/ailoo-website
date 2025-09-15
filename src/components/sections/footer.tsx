@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Instagram, Facebook, Linkedin } from 'lucide-react'
+import { Instagram, Linkedin } from 'lucide-react'
 
 const footerLinks = {
   'Services': [
@@ -23,9 +23,8 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: Instagram, href: 'https://www.instagram.com/ailoo_app/', label: 'Instagram' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/ailoorides/', label: 'LinkedIn' },
 ]
 
 const legalLinks = [
