@@ -1,3 +1,8 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/constants/metadata";
+
+export const metadata: Metadata = pageMetadata.download;
+
 'use client'
 
 import { useEffect, useState } from 'react'

@@ -1,3 +1,8 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/constants/metadata";
+
+export const metadata: Metadata = pageMetadata.taxi;
+
 import Header from '@/components/sections/header'
 import Footer from '@/components/sections/footer'
 import { Button } from '@/components/ui/button'

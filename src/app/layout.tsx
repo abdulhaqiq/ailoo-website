@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AOSInit from "@/components/AOSInit";
+import { defaultMetadata } from "@/constants/metadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,10 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Ailoo - Get paid early, save automatically",
-  description: "Supports small businesses with simple invoicing, powerful integrations, and cash flow management tools.",
-};
+export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
