@@ -1,0 +1,98 @@
+'use client'
+
+import MobileAppSlider from './mobile-app-slider'
+
+export default function Hero() {
+  return (
+    <section className="relative py-12 lg:py-20 bg-black overflow-hidden">
+      {/* SVG Background - Behind Slider */}
+      <div className="absolute right-0 top-0 h-full w-1/2 opacity-5">
+        <svg 
+          width="100%" 
+          height="100%" 
+          viewBox="0 0 806 908" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full object-cover"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <mask id="path-1-inside-1_594_9" fill="white">
+            <path d="M722.095 712.494C736.716 766.666 765.319 880.103 806 897.31C782.483 902.408 754.513 905.596 725.272 905.596C633.105 905.596 528.223 875.642 507.246 787.06L487.541 715.044C456.395 841.228 328.63 907.508 212.307 907.508C101.068 907.508 0 847.602 0 722.055C0.000144734 539.789 216.12 228.788 309.561 77.75C294.306 39.5126 274.599 7.01045 247.903 0H527.587L722.095 712.494ZM323.544 117.263C283.498 230.063 237.096 425.076 237.096 577.389C237.096 700.387 267.607 795.343 357.232 795.343H361.047C407.45 794.705 452.581 756.468 479.276 683.817L338.163 168.246C333.715 152.951 329.265 135.107 323.544 117.263Z"/>
+          </mask>
+          <path d="M722.095 712.494L731.749 709.888L731.745 709.874L731.742 709.861L722.095 712.494ZM806 897.31L808.119 907.082L838.964 900.395L809.896 888.1L806 897.31ZM725.272 905.596L725.272 915.596H725.272V905.596ZM507.246 787.06L516.977 784.755L516.937 784.587L516.892 784.42L507.246 787.06ZM487.541 715.044L497.186 712.405L487.043 675.333L477.832 712.648L487.541 715.044ZM212.307 907.508L212.307 917.508L212.307 917.508L212.307 907.508ZM0 722.055L-10 722.055V722.055H0ZM309.561 77.75L318.065 83.0111L320.716 78.7254L318.849 74.0445L309.561 77.75ZM247.903 0V-10L245.363 9.67205L247.903 0ZM527.587 0L537.234 -2.63358L535.223 -10H527.587V0ZM323.544 117.263L333.066 114.209L324.026 86.0141L314.12 113.917L323.544 117.263ZM237.096 577.389L227.096 577.389V577.389H237.096ZM361.047 795.343V805.343H361.116L361.184 805.342L361.047 795.343ZM479.276 683.817L488.663 687.266L489.766 684.263L488.922 681.177L479.276 683.817ZM338.163 168.246L347.808 165.606L347.787 165.53L347.765 165.454L338.163 168.246ZM722.095 712.494L712.44 715.1C719.7 741.996 730.643 784.451 744.918 822.293C752.056 841.214 760.169 859.378 769.288 874.066C778.218 888.449 789.006 900.979 802.104 906.52L806 897.31L809.896 888.1C802.654 885.037 794.61 876.934 786.279 863.516C778.137 850.402 770.557 833.595 763.631 815.234C749.779 778.513 739.111 737.164 731.749 709.888L722.095 712.494ZM806 897.31L803.881 887.537C781.081 892.48 753.822 895.596 725.272 895.596V905.596V915.596C755.204 915.596 783.885 912.337 808.119 907.082L806 897.31ZM725.272 905.596L725.272 895.596C680.097 895.596 632.383 888.23 593.741 870.461C555.255 852.763 526.552 825.191 516.977 784.755L507.246 787.06L497.515 789.364C508.917 837.511 543.143 869.206 585.385 888.631C627.47 907.984 678.28 915.596 725.272 915.596L725.272 905.596ZM507.246 787.06L516.892 784.42L497.186 712.405L487.541 715.044L477.896 717.683L497.601 789.699L507.246 787.06ZM487.541 715.044L477.832 712.648C448.146 832.921 325.709 897.508 212.307 897.508L212.307 907.508L212.307 917.508C331.552 917.508 464.645 849.536 497.25 717.44L487.541 715.044ZM212.307 907.508V897.508C158.339 897.508 107.606 882.959 70.6037 853.988C33.902 825.252 10 781.817 10 722.055H0H-10C-10 787.84 16.6321 837.131 58.2741 869.735C99.6153 902.104 155.036 917.508 212.307 917.508V907.508ZM0 722.055L10 722.055C10 678.253 23.0343 625.957 44.5764 569.281C66.0694 512.734 95.7662 452.502 128.501 393.013C194.052 273.889 271.073 158.97 318.065 83.0111L309.561 77.75L301.056 72.4889C254.608 147.569 176.848 263.669 110.979 383.371C78.004 443.295 47.8308 504.428 25.8813 562.175C3.98082 619.794 -9.99996 674.724 -10 722.055L0 722.055ZM309.561 77.75L318.849 74.0445C311.076 54.5609 301.963 35.9891 291.068 21.227C280.233 6.5445 266.909 -5.34808 250.443 -9.67205L247.903 0L245.363 9.67205C255.593 12.3585 265.47 20.2222 274.976 33.1028C284.423 45.9037 292.791 62.7017 300.272 81.4555L309.561 77.75ZM247.903 0V10H527.587V0V-10H247.903V0ZM527.587 0L517.94 2.63358L712.448 715.128L722.095 712.494L731.742 709.861L537.234 -2.63358L527.587 0ZM323.544 117.263L314.12 113.917C273.838 227.384 227.096 423.572 227.096 577.389L237.096 577.389L247.096 577.389C247.096 426.581 293.158 232.743 332.968 120.608L323.544 117.263ZM237.096 577.389H227.096C227.096 639.408 234.74 695.691 254.545 736.828C264.507 757.522 277.719 774.739 294.916 786.777C312.202 798.876 332.954 805.343 357.232 805.343V795.343V785.343C336.698 785.343 320.027 779.94 306.385 770.392C292.654 760.781 281.433 746.572 272.565 728.152C254.708 691.061 247.096 638.368 247.096 577.389H237.096ZM357.232 795.343V805.343H361.047V795.343V785.343H357.232V795.343ZM361.047 795.343L361.184 805.342C413.573 804.622 461.303 761.725 488.663 687.266L479.276 683.817L469.89 680.368C443.859 751.211 401.326 784.788 360.91 785.344L361.047 795.343ZM479.276 683.817L488.922 681.177L347.808 165.606L338.163 168.246L328.518 170.886L469.631 686.457L479.276 683.817ZM338.163 168.246L347.765 165.454C343.485 150.735 338.819 132.152 333.066 114.209L323.544 117.263L314.021 120.316C319.711 138.062 323.945 155.167 328.561 171.038L338.163 168.246Z" fill="white" mask="url(#path-1-inside-1_594_9)"/>
+        </svg>
+      </div>
+      
+      {/* Content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Mobile App Slider - First on mobile, second on desktop */}
+          <div className="relative order-1 lg:order-2">
+            <MobileAppSlider />
+          </div>
+
+          {/* Text Content - Second on mobile, first on desktop */}
+          <div className="space-y-8 order-2 lg:order-1">
+            <div className="space-y-6">
+              <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
+                Your Complete
+                <span className="block text-[#DFFF50]">Transportation Hub</span>
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-2xl">
+                Experience seamless mobility with Ailoo's comprehensive platform offering ride-hailing, flight bookings, home rentals, car rentals, and subscription services all in one place.
+              </p>
+            </div>
+
+            {/* App Store Buttons */}
+            <div className="flex gap-3">
+              <a 
+                href="/download" 
+                className="flex-shrink-0"
+                aria-label="Download on Google Play"
+              >
+                <img 
+                  src="/google-play.svg" 
+                  alt="Get it on Google Play" 
+                  className="h-10 w-auto hover:opacity-80 transition-opacity"
+                />
+              </a>
+              <a 
+                href="/download" 
+                className="flex-shrink-0"
+                aria-label="Download on App Store"
+              >
+                <img 
+                  src="/apple-store.svg" 
+                  alt="Download on the App Store" 
+                  className="h-10 w-auto hover:opacity-80 transition-opacity"
+                />
+              </a>
+            </div>
+
+            {/* Service Partners */}
+            <div className="flex items-center gap-8 pt-8">
+              <span className="text-sm text-muted-foreground">Trusted Partners</span>
+              <div className="flex items-center gap-6">
+                <img 
+                  src="https://www.logo.wine/a/logo/Qatar_Airways/Qatar_Airways-Logo.wine.svg" 
+                  alt="Qatar Airways" 
+                  className="h-15 w-auto opacity-70 hover:opacity-100 transition-opacity filter brightness-0 invert"
+                />
+                <img 
+                  src="https://www.logo.wine/a/logo/Skyscanner/Skyscanner-Logo.wine.svg" 
+                  alt="Skyscanner" 
+                  className="h-15 w-auto opacity-70 hover:opacity-100 transition-opacity filter brightness-0 invert"
+                />
+                <img 
+                  src="https://www.logo.wine/a/logo/Saudia/Saudia-Logo.wine.svg" 
+                  alt="Saudia" 
+                  className="h-15 w-auto opacity-70 hover:opacity-100 transition-opacity filter brightness-0 invert"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
