@@ -253,12 +253,24 @@ export default function TaxiPage() {
               Download the Ailoo app now and experience the best taxi service in the city.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-black text-white hover:bg-gray-800">
-                Download for iOS
-              </Button>
-              <Button size="lg" className="bg-black text-white hover:bg-gray-800">
-                Download for Android
-              </Button>
+              <a 
+                href="https://apps.apple.com/us/app/ailoo/id6751115120?uo=2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button size="lg" className="bg-black text-white hover:bg-gray-800">
+                  Download for iOS
+                </Button>
+              </a>
+              <a 
+                href="/download"
+                className="inline-block"
+              >
+                <Button size="lg" className="bg-black text-white hover:bg-gray-800">
+                  Download for Android
+                </Button>
+              </a>
             </div>
           </div>
         </div>

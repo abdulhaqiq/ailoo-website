@@ -57,7 +57,9 @@ export default function Hero() {
                 />
               </a>
               <a 
-                href="/download" 
+                href="https://apps.apple.com/us/app/ailoo/id6751115120?uo=2"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex-shrink-0"
                 aria-label="Download on App Store"
               >
