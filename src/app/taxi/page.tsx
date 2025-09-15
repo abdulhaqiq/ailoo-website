@@ -165,7 +165,12 @@ export default function TaxiPage() {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-black border border-gray-700 rounded-2xl p-8 text-center">
+            <div className="bg-black border-2 border-[#DFFF50] rounded-2xl p-8 text-center relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-[#DFFF50] text-black px-4 py-1 rounded-full text-sm font-semibold">
+                  Most Popular
+                </span>
+              </div>
               <h3 className="text-2xl font-bold text-white mb-4">Monthly Plan</h3>
               <div className="text-4xl font-bold text-[#DFFF50] mb-6">29 SAR</div>
               <p className="text-gray-300 mb-6">per month</p>
@@ -196,12 +201,7 @@ export default function TaxiPage() {
               </Button>
             </div>
             
-            <div className="bg-black border-2 border-[#DFFF50] rounded-2xl p-8 text-center relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-[#DFFF50] text-black px-4 py-1 rounded-full text-sm font-semibold">
-                  Best Value
-                </span>
-              </div>
+            <div className="bg-black border border-gray-700 rounded-2xl p-8 text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Yearly Plan</h3>
               <div className="text-4xl font-bold text-[#DFFF50] mb-6">299 SAR</div>
               <p className="text-gray-300 mb-6">per year</p>
@@ -234,7 +234,7 @@ export default function TaxiPage() {
                   <span className="text-white">Exclusive benefits</span>
                 </li>
               </ul>
-              <Button className="w-full bg-[#DFFF50] text-black hover:bg-[#DFFF50]/90">
+              <Button className="w-full bg-gray-800 text-white hover:bg-gray-700">
                 Choose Yearly
               </Button>
             </div>

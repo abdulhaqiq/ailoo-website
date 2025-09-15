@@ -43,7 +43,7 @@ export default function BecomeDriverPage() {
     message: ''
   })
 
-  const [selectedPlan, setSelectedPlan] = useState('weekly')
+  const [selectedPlan, setSelectedPlan] = useState('monthly')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -73,8 +73,7 @@ export default function BecomeDriverPage() {
       price: '120',
       period: 'per week',
       features: ['Priority support', 'Advanced features', 'Weekly planning', 'Save 29%'],
-      color: 'bg-[#DFFF50]',
-      isPopular: true
+      color: 'bg-gray-600'
     },
     {
       id: 'monthly',
@@ -82,7 +81,8 @@ export default function BecomeDriverPage() {
       price: '400',
       period: 'per month',
       features: ['Premium support', 'All features', 'Monthly planning', 'Save 44%', 'Exclusive benefits'],
-      color: 'bg-gray-800'
+      color: 'bg-[#DFFF50]',
+      isPopular: true
     }
   ]
 

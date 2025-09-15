@@ -36,11 +36,48 @@ import {
 } from 'lucide-react'
 
 export default function CarRentalPage() {
-  const [selectedTier, setSelectedTier] = useState('medium')
+  const [selectedTier, setSelectedTier] = useState('monthly-economy')
 
   const subscriptionTiers = [
     {
-      id: 'low',
+      id: 'monthly-economy',
+      name: 'Economy Plan',
+      price: '60',
+      period: 'per month',
+      description: 'Perfect for individual car owners',
+      commission: '4% commission on each booking',
+      features: [
+        'Up to 3 vehicle listings',
+        'Basic rental management',
+        'Standard customer support',
+        'Monthly earnings reports',
+        'Mobile app access',
+        'Basic vehicle photos'
+      ],
+      popular: true
+    },
+    {
+      id: 'monthly-business',
+      name: 'Business Plan',
+      price: '90',
+      period: 'per month',
+      description: 'Ideal for growing rental businesses',
+      commission: '4% commission on each booking',
+      features: [
+        'Up to 10 vehicle listings',
+        'Advanced rental management',
+        'Priority customer support',
+        'Weekly earnings reports',
+        'Mobile app + web dashboard',
+        'Professional vehicle photos',
+        'Automated pricing tools',
+        'Customer communication tools',
+        'GPS tracking integration'
+      ],
+      popular: false
+    },
+    {
+      id: 'yearly-economy',
       name: 'Economy Plan',
       price: '600',
       period: 'per year',
@@ -52,12 +89,13 @@ export default function CarRentalPage() {
         'Standard customer support',
         'Monthly earnings reports',
         'Mobile app access',
-        'Basic vehicle photos'
+        'Basic vehicle photos',
+        'Save 17% compared to monthly'
       ],
       popular: false
     },
     {
-      id: 'medium',
+      id: 'yearly-business',
       name: 'Business Plan',
       price: '900',
       period: 'per year',
@@ -72,12 +110,13 @@ export default function CarRentalPage() {
         'Professional vehicle photos',
         'Automated pricing tools',
         'Customer communication tools',
-        'GPS tracking integration'
+        'GPS tracking integration',
+        'Save 17% compared to monthly'
       ],
-      popular: true
+      popular: false
     },
     {
-      id: 'high',
+      id: 'yearly-fleet',
       name: 'Fleet Plan',
       price: '1,200',
       period: 'per year',
@@ -95,7 +134,8 @@ export default function CarRentalPage() {
         'Revenue optimization tools',
         'Custom branding options',
         'Multi-location support',
-        'Fleet maintenance tracking'
+        'Fleet maintenance tracking',
+        'Save 17% compared to monthly'
       ],
       popular: false
     }

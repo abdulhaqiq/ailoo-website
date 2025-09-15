@@ -35,14 +35,14 @@ import {
 } from 'lucide-react'
 
 export default function HomeRentalPage() {
-  const [selectedTier, setSelectedTier] = useState('medium')
+  const [selectedTier, setSelectedTier] = useState('monthly-basic')
 
   const subscriptionTiers = [
     {
-      id: 'low',
-      name: 'Low Tier',
-      price: '800',
-      period: 'per year',
+      id: 'monthly-basic',
+      name: 'Basic Plan',
+      price: '80',
+      period: 'per month',
       description: 'Perfect for budget-conscious travelers',
       features: [
         'Up to 5 property listings',
@@ -52,13 +52,13 @@ export default function HomeRentalPage() {
         'Mobile app access',
         'Basic photo uploads'
       ],
-      popular: false
+      popular: true
     },
     {
-      id: 'medium',
-      name: 'Medium Tier',
-      price: '1,000',
-      period: 'per year',
+      id: 'monthly-premium',
+      name: 'Premium Plan',
+      price: '120',
+      period: 'per month',
       description: 'Ideal for growing rental businesses',
       features: [
         'Up to 15 property listings',
@@ -70,11 +70,47 @@ export default function HomeRentalPage() {
         'Automated pricing tools',
         'Guest communication tools'
       ],
-      popular: true
+      popular: false
     },
     {
-      id: 'high',
-      name: 'High Tier',
+      id: 'yearly-basic',
+      name: 'Basic Plan',
+      price: '800',
+      period: 'per year',
+      description: 'Perfect for budget-conscious travelers',
+      features: [
+        'Up to 5 property listings',
+        'Basic property management tools',
+        'Standard customer support',
+        'Monthly performance reports',
+        'Mobile app access',
+        'Basic photo uploads',
+        'Save 17% compared to monthly'
+      ],
+      popular: false
+    },
+    {
+      id: 'yearly-premium',
+      name: 'Premium Plan',
+      price: '1,000',
+      period: 'per year',
+      description: 'Ideal for growing rental businesses',
+      features: [
+        'Up to 15 property listings',
+        'Advanced property management',
+        'Priority customer support',
+        'Weekly performance reports',
+        'Mobile app + web dashboard',
+        'Professional photo uploads',
+        'Automated pricing tools',
+        'Guest communication tools',
+        'Save 17% compared to monthly'
+      ],
+      popular: false
+    },
+    {
+      id: 'yearly-enterprise',
+      name: 'Enterprise Plan',
       price: '1,400',
       period: 'per year',
       description: 'Complete solution for property managers',
@@ -88,7 +124,8 @@ export default function HomeRentalPage() {
         'Dynamic pricing optimization',
         'Advanced guest management',
         'Revenue optimization tools',
-        'Custom branding options'
+        'Custom branding options',
+        'Save 17% compared to monthly'
       ],
       popular: false
     }
