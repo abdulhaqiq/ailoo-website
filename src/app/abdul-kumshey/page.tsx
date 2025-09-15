@@ -141,7 +141,7 @@ export default function AbdulKumsheyPage() {
 
             {/* Blog Meta */}
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-sm text-gray-400">Published: December 2024</span>
+              <span className="text-sm text-gray-400">Published: September 15, 2025</span>
               <span className="text-sm text-gray-400">•</span>
               <span className="text-sm text-gray-400">5 min read</span>
               <span className="text-sm text-gray-400">•</span>
@@ -245,7 +245,7 @@ export default function AbdulKumsheyPage() {
               
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
                 Born and brought up in Riyadh, Abdul Kumshey is a visionary entrepreneur and technology leader 
-                who founded Ailoo in July 2025 with a mission to revolutionize transportation across the Middle East. 
+                who founded Ailoo in September 2025 with a mission to revolutionize transportation across the Middle East. 
                 Prior to Ailoo, Abdul founded Haqiq, an AI-powered news application that achieved remarkable success 
                 with 5,000+ users and 100,000 impressions in just 2 months, trending in the top 10 across Saudi Arabia and UAE.
               </p>

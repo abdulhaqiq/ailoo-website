@@ -67,7 +67,7 @@ export const blogPosts: BlogPost[] = [
     category: blogCategories[0],
     tags: ['mobility', 'innovation', 'urban-transport', 'technology'],
     featuredImage: '/blog/featured/urban-mobility.jpg',
-    publishedAt: '2024-12-15',
+    publishedAt: '2025-09-15',
     readTime: 5,
     views: 1250,
     isFeatured: true
@@ -100,7 +100,7 @@ export const blogPosts: BlogPost[] = [
     category: blogCategories[2],
     tags: ['business', 'commission', 'fair-pricing', 'sustainability'],
     featuredImage: '/blog/featured/zero-commission.jpg',
-    publishedAt: '2024-12-12',
+    publishedAt: '2025-09-12',
     readTime: 4,
     views: 980,
     isFeatured: true
@@ -136,7 +136,7 @@ export const blogPosts: BlogPost[] = [
     category: blogCategories[4],
     tags: ['safety', 'security', 'background-checks', 'monitoring'],
     featuredImage: '/blog/featured/safety-measures.jpg',
-    publishedAt: '2024-12-10',
+    publishedAt: '2025-09-10',
     readTime: 6,
     views: 750,
     isFeatured: false
@@ -169,7 +169,7 @@ export const blogPosts: BlogPost[] = [
     category: blogCategories[1],
     tags: ['smart-cities', 'technology', 'sustainability', 'innovation'],
     featuredImage: '/blog/featured/smart-cities.jpg',
-    publishedAt: '2024-12-08',
+    publishedAt: '2025-09-08',
     readTime: 7,
     views: 890,
     isFeatured: false
@@ -205,7 +205,7 @@ export const blogPosts: BlogPost[] = [
     category: blogCategories[3],
     tags: ['travel-tips', 'user-guide', 'subscriptions', 'platform-features'],
     featuredImage: '/blog/featured/travel-tips.jpg',
-    publishedAt: '2024-12-05',
+    publishedAt: '2025-09-05',
     readTime: 4,
     views: 650,
     isFeatured: false
@@ -238,7 +238,7 @@ export const blogPosts: BlogPost[] = [
     category: blogCategories[2],
     tags: ['economics', 'shared-mobility', 'business-model', 'sustainability'],
     featuredImage: '/blog/featured/economics-mobility.jpg',
-    publishedAt: '2024-12-03',
+    publishedAt: '2025-09-03',
     readTime: 8,
     views: 720,
     isFeatured: false

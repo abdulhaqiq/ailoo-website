@@ -143,7 +143,7 @@ export default function AboutUsPage() {
               <span className="block text-[#DFFF50]">Revolutionizing Transportation</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Founded in July 2025, we're building the future of transportation with a comprehensive multi-service platform 
+              Founded in September 2025, we're building the future of transportation with a comprehensive multi-service platform 
               that connects people, places, and possibilities across the Middle East and beyond.
             </p>
           </div>

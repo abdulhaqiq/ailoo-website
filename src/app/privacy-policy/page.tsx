@@ -5,7 +5,7 @@ import Footer from '@/components/sections/footer'
 import { Shield, Lock, Eye, Database, Calendar, AlertCircle, CheckCircle } from 'lucide-react'
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = "December 2024"
+  const lastUpdated = "September 15, 2025"
 
   const sections = [
     {
