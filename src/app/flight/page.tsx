@@ -1,8 +1,3 @@
-import type { Metadata } from "next";
-import { pageMetadata } from "@/constants/metadata";
-
-export const metadata: Metadata = pageMetadata.flight;
-
 'use client'
 
 import { useState } from 'react'

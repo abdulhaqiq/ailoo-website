@@ -1,8 +1,3 @@
-import type { Metadata } from "next";
-import { pageMetadata } from "@/constants/metadata";
-
-export const metadata: Metadata = pageMetadata.blog;
-
 'use client'
 
 import { useState, useMemo } from 'react'

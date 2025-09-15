@@ -1,18 +1,20 @@
+import { Pool, PoolClient } from 'pg'
 import { DatabaseConfig } from './schema'
 
 // Database connection configuration
 const dbConfig: DatabaseConfig = {
   host: process.env.DB_HOST || 'localhost',
   port: parseInt(process.env.DB_PORT || '5432'),
-  database: process.env.DB_NAME || 'ailoo_blog',
+  database: process.env.DB_NAME || 'ailoo_website',
   username: process.env.DB_USER || 'postgres',
   password: process.env.DB_PASSWORD || 'password',
   ssl: process.env.NODE_ENV === 'production'
 }
 
-// Mock database connection (replace with actual database implementation)
+// Real PostgreSQL database connection
 class DatabaseConnection {
   private static instance: DatabaseConnection
+  private pool: Pool | null = null
   private isConnected: boolean = false
 
   private constructor() {}
@@ -26,12 +28,24 @@ class DatabaseConnection {
 
   public async connect(): Promise<void> {
     try {
-      // In a real implementation, you would connect to your database here
-      // For example, with PostgreSQL using pg library:
-      // const { Pool } = require('pg')
-      // this.pool = new Pool(dbConfig)
+      this.pool = new Pool({
+        host: dbConfig.host,
+        port: dbConfig.port,
+        database: dbConfig.database,
+        user: dbConfig.username,
+        password: dbConfig.password,
+        ssl: dbConfig.ssl ? { rejectUnauthorized: false } : false,
+        max: 20, // Maximum number of clients in the pool
+        idleTimeoutMillis: 30000, // Close idle clients after 30 seconds
+        connectionTimeoutMillis: 2000, // Return an error after 2 seconds if connection could not be established
+      })
+
+      // Test the connection
+      const client = await this.pool.connect()
+      await client.query('SELECT NOW()')
+      client.release()
       
-      console.log('Connected to database:', dbConfig.database)
+      console.log('Connected to PostgreSQL database:', dbConfig.database)
       this.isConnected = true
     } catch (error) {
       console.error('Database connection failed:', error)
@@ -41,7 +55,10 @@ class DatabaseConnection {
 
   public async disconnect(): Promise<void> {
     try {
-      // Close database connection
+      if (this.pool) {
+        await this.pool.end()
+        this.pool = null
+      }
       this.isConnected = false
       console.log('Disconnected from database')
     } catch (error) {
@@ -51,11 +68,15 @@ class DatabaseConnection {
   }
 
   public isConnectedToDatabase(): boolean {
-    return this.isConnected
+    return this.isConnected && this.pool !== null
   }
 
   public getConfig(): DatabaseConfig {
     return { ...dbConfig }
+  }
+
+  public getPool(): Pool | null {
+    return this.pool
   }
 }
 
@@ -69,12 +90,14 @@ export class DatabaseQuery {
     params: any[] = []
   ): Promise<T[]> {
     try {
-      // In a real implementation, you would execute the SQL query here
-      // For now, we'll return mock data
+      const pool = this.db.getPool()
+      if (!pool) {
+        throw new Error('Database not connected')
+      }
+
       console.log('Executing query:', sql, 'with params:', params)
-      
-      // Mock implementation - replace with actual database queries
-      return []
+      const result = await pool.query(sql, params)
+      return result.rows
     } catch (error) {
       console.error('Database query failed:', error)
       throw error
@@ -83,23 +106,24 @@ export class DatabaseQuery {
 
   // Transaction wrapper
   public static async transaction<T>(
-    callback: (client: any) => Promise<T>
+    callback: (client: PoolClient) => Promise<T>
   ): Promise<T> {
+    const pool = this.db.getPool()
+    if (!pool) {
+      throw new Error('Database not connected')
+    }
+
+    const client = await pool.connect()
     try {
-      // In a real implementation, you would start a transaction here
-      // const client = await this.db.pool.connect()
-      // await client.query('BEGIN')
-      
-      const result = await callback(null) // Pass null as mock client
-      
-      // await client.query('COMMIT')
-      // client.release()
-      
+      await client.query('BEGIN')
+      const result = await callback(client)
+      await client.query('COMMIT')
       return result
     } catch (error) {
-      // await client.query('ROLLBACK')
-      // client.release()
+      await client.query('ROLLBACK')
       throw error
+    } finally {
+      client.release()
     }
   }
 
