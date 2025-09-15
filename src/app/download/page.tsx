@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Header from '@/components/sections/header'
 import Footer from '@/components/sections/footer'
-import { Smartphone, Apple, Android, Monitor, Download, X, CheckCircle } from 'lucide-react'
+import { Smartphone, Apple, Smartphone as Android, Monitor, Download, X, CheckCircle } from 'lucide-react'
 
 export default function DownloadPage() {
   const [deviceType, setDeviceType] = useState<string>('')
